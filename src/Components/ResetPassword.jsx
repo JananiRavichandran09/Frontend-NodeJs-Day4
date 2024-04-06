@@ -18,7 +18,7 @@ const ResetPassword = () => {
       .post(
         `https://backend-nodejs-day4.onrender.com/api/user/resetpassword/${id}/${token}`,
         {
-          password,
+          password
         }
       )
       .then((res) => {
