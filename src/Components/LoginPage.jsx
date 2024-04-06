@@ -14,7 +14,7 @@ const LoginPage = () => {
     console.log("login api payloads", email, password);
     const payloads = { password, email };
     await axios
-      .post("https://backend-nodejs-day4.onrender.com/login", payloads)
+      .post("https://backend-nodejs-day4.onrender.com/api/user/login", payloads)
       .then((result) => {
         console.log(result);
         if (result.data === "Success") {

@@ -13,7 +13,7 @@ const ForgotPasswor = () => {
       const payloads = {  email };
       await axios
         .post(
-          "https://backend-nodejs-day4.onrender.com/forgotpassword",
+          "https://backend-nodejs-day4.onrender.com/api/user/forgotpassword",
           payloads
         )
         .then((res) => {

@@ -18,7 +18,7 @@ const RegisterPage = () => {
    
     const payloads = { username, email, password };
     await axios
-      .post("https://backend-nodejs-day4.onrender.com/register", payloads)
+      .post("https://backend-nodejs-day4.onrender.com/api/user/register", payloads)
       .then((res) => setResponseMsg(res.data.message));
          toast.success("Registered Successfully")
     navigate('/')

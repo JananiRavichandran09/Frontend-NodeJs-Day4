@@ -14,7 +14,7 @@ const ResetPassword = () => {
     e.preventDefault()
     axios
       .post(
-        `https://backend-nodejs-day4.onrender.com/resetpassword/${id}/${token}`,
+        `https://backend-nodejs-day4.onrender.com/api/user/resetpassword/${id}/${token}`,
         {
           password,
         }
