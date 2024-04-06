@@ -27,60 +27,63 @@ const ForgotPasswor = () => {
 
     return (
       <div>
-        <div
-          className="container-fluid "
-          style={{
-            display: "flex",
-            alignItems: "center",
-            height: "100vh",
-            justifyContent: "center",
-            
-          }}
-        >
-          <div className="container ">
-            <div className="row">
-              <div className="col d-flex justify-content-center ">
-                <form onSubmit={handleSubmit}>
-                                <div className="mb-3 ">
-                                    <h3>Forgot Password</h3>
-                    <label
-                      for="exampleFormControlInput1"
-                      class="col-form-label"
+        <div className="card">
+          <div
+            className="container-fluid "
+            style={{
+              display: "flex",
+              alignItems: "center",
+              height: "100vh",
+              justifyContent: "center",
+            }}
+          >
+            <div className="container ">
+              <div className="row">
+                <div className="col d-flex justify-content-center ">
+                  <form onSubmit={handleSubmit}>
+                    <div
+                      className="mb-2 card-body p-5"
+                      style={{  boxShadow :"5px 10px 8px 10px #888888"}}
                     >
-                      Email
-                    </label>
-                    <input
-                      type="email"
-                      class="form-control"
-                      id="exampleFormControlInput1"
-                      placeholder="name@example.com"
-                      value={email}
-                      onChange={(e) => setEmail(e.target.value)}
-                      style={{ width: "300px" }}
-                    />
-                    
-                    <br />
-                    <div className="text-center">
-                      <button
-                        type="submit"
-                        style={{
-                          width: "300px",
-                          border: "none",
-                          backgroundColor: "green",
-                          color: "white",
-                          padding: "10px",
-                          borderRadius: "5px",
-                        }}
+                      <h3 style={{textAlign:"center", fontFamily:"cursive",fontWeight:"bold"}}>Forgot Password</h3>
+                      <label
+                        for="exampleFormControlInput1"
+                        class="col-form-label"
                       >
-                        Send
-                      </button>
-                      <br />
-                      
-                    </div>
-                  </div>
-                </form>
+                        Email
+                      </label>
+                      <input
+                        type="email"
+                        class="form-control"
+                        id="exampleFormControlInput1"
+                        placeholder="name@example.com"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        style={{ width: "300px" }}
+                      />
 
-                <ToastContainer />
+                      <br />
+                      <div className="text-center">
+                        <button
+                          type="submit"
+                          style={{
+                            width: "300px",
+                            border: "none",
+                            backgroundColor: "green",
+                            color: "white",
+                            padding: "10px",
+                            borderRadius: "5px",
+                          }}
+                        >
+                          Send
+                        </button>
+                        <br />
+                      </div>
+                    </div>
+                  </form>
+
+                  <ToastContainer />
+                </div>
               </div>
             </div>
           </div>
@@ -90,3 +93,4 @@ const ForgotPasswor = () => {
 };
 
 export default ForgotPasswor;
+

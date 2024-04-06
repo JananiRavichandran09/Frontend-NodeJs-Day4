@@ -18,6 +18,7 @@ const LoginPage = () => {
       .then(result => {
         console.log(result)
         if (result.data === "Success") {
+          toast.success("Login Successfully")
            navigate("/dashboard");
         }
       })
@@ -84,20 +85,19 @@ const LoginPage = () => {
                   >
                     Login
                   </button>
-                  <br />
-                  <p>
-                    
-                    <Link to="/forgotpassword">Forgot Password</Link>
-                  </p>
+                  <ToastContainer />
                   <p>
                     You don't have an account?
                     <Link to="/register">Register</Link>
                   </p>
+                  <p style={{ textAlign: "center" }}>
+                    <Link to="/forgotpassword" style={{ color: "red" }}>
+                      Forgot Password
+                    </Link>
+                  </p>
                 </div>
               </div>
             </form>
-
-            <ToastContainer />
           </div>
         </div>
       </div>

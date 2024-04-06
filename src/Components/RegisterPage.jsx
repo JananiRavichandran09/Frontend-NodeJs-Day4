@@ -11,14 +11,17 @@ const RegisterPage = () => {
   const [responseMsg, setResponseMsg] = useState("");
   const navigate = useNavigate();
   const handleSubmit = async (e) => {
+    
     e.preventDefault()
+    
     console.log("register API payloads", username, email, password);
+   
     const payloads = { username, email, password };
     await axios
       .post("http://localhost:8080/api/user/register", payloads)
-      .then((res) => setResponseMsg(res.data.message));
-    toast.success("Registered Successfully")
-          navigate('/')
+      .then((res) => setResponseMsg(res.data.message))
+         toast.success("Registered Successfully")
+    navigate('/')
       .catch((err) => {
       console.log(err);
       toast.error(responseMsg);
@@ -97,6 +100,7 @@ const RegisterPage = () => {
                   >
                     Register
                   </button>
+
                   <br />
                   <p>
                     Already have an account? <Link to="/">Login</Link>
@@ -104,7 +108,6 @@ const RegisterPage = () => {
                 </div>
               </div>
             </form>
-
             <ToastContainer />
           </div>
         </div>

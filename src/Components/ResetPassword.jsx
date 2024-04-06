@@ -5,30 +5,29 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const ResetPassword = () => {
-    const [password, setPassword] = useState('')
-  
-    const navigate = useNavigate();
-    const {  token } = useParams()
-    axios.defaults.withCredentials = true;
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+    const [password, setPassword] = useState()
+  const navigate = useNavigate();
+   axios.defaults.withCredentials = true;
+    const {id,  token } = useParams()
    
-    await axios
-        .post(`http://localhost:8080/api/user/resetpassword${token}`, password )
-        .then(res => {
-            if (res.data.status) {
-                 navigate('/')
-            } 
-            console.log(response.data)
-        })
-      .catch(err => console.log(err))
-      
+  const handleSubmit =  (e) => {
+    e.preventDefault()
+    axios.post(`http://localhost:8080/api/user/resetpassword/${id}/${token}`, {
+        password
+      })
+      .then((res) => {
+        if (res.data.Success === "Success") {
+          navigate("/");
+        }
+        console.log(res.data);
+      })
+      .catch((err) => console.log(err));
           
   };
 
   return (
     <div>
-      <div>
+      <div className="card">
         <div
           className="container-fluid "
           style={{
@@ -42,20 +41,32 @@ const ResetPassword = () => {
             <div className="row">
               <div className="col d-flex justify-content-center ">
                 <form onSubmit={handleSubmit}>
-                  <div className="mb-3 ">
-                    <h3>Reset Password</h3>
+                  <div
+                    className="mb-3 card-body p-5"
+                    style={{ boxShadow: "5px 10px 8px 10px #888888" }}
+                  >
+                    <h3
+                      style={{
+                        textAlign: "center",
+                        fontFamily: "cursive",
+                        fontWeight: "bold",
+                      }}
+                    >
+                      Reset Password{" "}
+                    </h3>
                     <label
                       for="exampleFormControlInput1"
                       class="col-form-label"
                     >
-                     New Password
+                      New Password
                     </label>
                     <input
                       type="password"
                       class="form-control"
                       id="exampleFormControlInput1"
                       placeholder=" Password"
-                      value={email}
+                      autoComplete="off"
+                      name="password"
                       onChange={(e) => setPassword(e.target.value)}
                       style={{ width: "300px" }}
                     />
@@ -73,14 +84,13 @@ const ResetPassword = () => {
                           borderRadius: "5px",
                         }}
                       >
-                        Update
+                        Send
                       </button>
+                      <ToastContainer />
                       <br />
                     </div>
                   </div>
                 </form>
-
-                <ToastContainer />
               </div>
             </div>
           </div>
