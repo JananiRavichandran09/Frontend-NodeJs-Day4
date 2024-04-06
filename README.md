@@ -1,8 +1,15 @@
-# React + Vite
+# Password Reset App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## OverView
 
-Currently, two official plugins are available:
+This is a simple password reset application built using the **MERN (MongoDB, Express.js, React.js, Node.js)** stack. It provides a `secure and efficient way` for users to *reset their passwords* in case they forget them.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Usage
+
+  + **User Registration**: Users need to register an account with the app.
+  + **Forgot Password**: If a user forgets their password, they can click on the "Forgot Password" link on the login page.
+  + **Password Reset**: The app will send an email to the user with a password reset link.
+  + **Reset Password**: By clicking on the link, the user will be redirected to a page where they can reset their password.
+  + **Login**: Once the password is successfully reset, the user can log in with the new password.
+  
+  

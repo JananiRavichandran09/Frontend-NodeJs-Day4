@@ -14,18 +14,18 @@ const LoginPage = () => {
     console.log("login api payloads", email, password);
     const payloads = { password, email };
     await axios
-      .post("http://localhost:8080/api/user/login", payloads)
-      .then(result => {
-        console.log(result)
+      .post("https://backend-nodejs-day4.onrender.com/login", payloads)
+      .then((result) => {
+        console.log(result);
         if (result.data === "Success") {
-          toast.success("Login Successfully")
-           navigate("/dashboard");
+          toast.success("Login Successfully");
+          navigate("/dashboard");
         }
       })
 
-    .catch((err) => {
-      console.log(err);
-    })
+      .catch((err) => {
+        console.log(err);
+      });
   }
 
   return (

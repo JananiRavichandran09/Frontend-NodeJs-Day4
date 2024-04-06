@@ -12,16 +12,19 @@ const ForgotPasswor = () => {
       console.log("login api payloads", email);
       const payloads = {  email };
       await axios
-        .post("http://localhost:8080/api/user/forgotpassword", payloads)
-        .then(res => {
+        .post(
+          "https://backend-nodejs-day4.onrender.com/forgotpassword",
+          payloads
+        )
+        .then((res) => {
           if (res.data.Status === "Success") {
-            alert("Check your Email for reset passwod link")
-              navigate('/')
-            }
+            alert("Check your Email for reset passwod link");
+            navigate("/");
+          }
         })
         .catch((err) => {
-                console.log(err); 
-              });
+          console.log(err);
+        });
     };
 
 

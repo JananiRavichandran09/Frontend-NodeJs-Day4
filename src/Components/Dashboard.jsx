@@ -5,14 +5,15 @@ import axios from "axios";
 const Dashboard = () => {
   axios.defaults.withCredentials = true;
   useEffect(() => {
-    axios.get('http://localhost:8080/dashboard')
-      .then(result => {
-        console.log(result)
+    axios
+      .get("https://backend-nodejs-day4.onrender.com/dashboard")
+      .then((result) => {
+        console.log(result);
         if (result.data !== "Success") {
           // navigate('/')
         }
       })
-      .catch(err=>console.log(err))
+      .catch((err) => console.log(err));
       
   },[])
   return (

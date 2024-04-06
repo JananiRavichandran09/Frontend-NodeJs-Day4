@@ -12,9 +12,13 @@ const ResetPassword = () => {
    
   const handleSubmit =  (e) => {
     e.preventDefault()
-    axios.post(`http://localhost:8080/api/user/resetpassword/${id}/${token}`, {
-        password
-      })
+    axios
+      .post(
+        `https://backend-nodejs-day4.onrender.com/resetpassword/${id}/${token}`,
+        {
+          password,
+        }
+      )
       .then((res) => {
         if (res.data.Success === "Success") {
           navigate("/");
