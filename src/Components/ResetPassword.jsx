@@ -11,21 +11,21 @@ const ResetPassword = () => {
     const {id,  token } = useParams()
    
   const handleSubmit = (e) => {
-     navigate("/");
+    toast.success("New Password Updated");
+    navigate("/");
     e.preventDefault()
-   
     axios
       .post(
-        "https://backend-nodejs-day4.onrender.com/api/user/resetpassword/"`${id}/${token}`,
+        `https://backend-nodejs-day4.onrender.com/api/user/resetpassword/${id}/${token}`,
         {
-          password
+          password,
         }
       )
       .then((res) => {
         if (res.data.Success === "Success") {
-           console.log(res.data);
+          console.log(res.data);
         }
-       
+        console.log(res.data);
       })
       .catch((err) => console.log(err));
           
@@ -58,7 +58,7 @@ const ResetPassword = () => {
                         fontWeight: "bold",
                       }}
                     >
-                      Reset Password
+                      Reset Password{" "}
                     </h3>
                     <label
                       for="exampleFormControlInput1"
@@ -92,6 +92,7 @@ const ResetPassword = () => {
                       >
                         Send
                       </button>
+                      
                       <ToastContainer />
                       <br />
                     </div>
