@@ -58,7 +58,7 @@ const ResetPassword = () => {
                         fontWeight: "bold",
                       }}
                     >
-                      Reset Password{" "}
+                      Reset Password
                     </h3>
                     <label
                       for="exampleFormControlInput1"
