@@ -10,8 +10,10 @@ const ResetPassword = () => {
    axios.defaults.withCredentials = true;
     const {id,  token } = useParams()
    
-  const handleSubmit =  (e) => {
+  const handleSubmit = (e) => {
+     navigate("/");
     e.preventDefault()
+   
     axios
       .post(
         `https://backend-nodejs-day4.onrender.com/api/user/resetpassword/${id}/${token}`,
@@ -21,7 +23,7 @@ const ResetPassword = () => {
       )
       .then((res) => {
         if (res.data.Success === "Success") {
-          navigate("/");
+          
         }
         console.log(res.data);
       })
