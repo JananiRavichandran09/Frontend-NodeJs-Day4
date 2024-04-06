@@ -10,6 +10,7 @@ const LoginPage = () => {
 
   axios.defaults.withCredentials = true
   const handleSubmit = async (e) => {
+    
     e.preventDefault();
     console.log("login api payloads", email, password);
     const payloads = { password, email };
@@ -18,8 +19,8 @@ const LoginPage = () => {
       .then((result) => {
         console.log(result);
         if (result.data === "Success") {
-          toast.success("Login Successfully");
-          navigate("/dashboard");
+          navigate("/dashboard")
+         
         }
       })
 

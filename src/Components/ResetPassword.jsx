@@ -23,9 +23,9 @@ const ResetPassword = () => {
       )
       .then((res) => {
         if (res.data.Success === "Success") {
-          
+           console.log(res.data);
         }
-        console.log(res.data);
+       
       })
       .catch((err) => console.log(err));
           
