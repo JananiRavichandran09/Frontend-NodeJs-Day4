@@ -27,7 +27,7 @@ const Dashboard = () => {
               </h3>
             </a>
             <div>
-              <Link to="/" style={{ textDecoration: "none", color: "black" }}>
+              <Link to="/login" style={{ textDecoration: "none", color: "black" }}>
                 <h5 >
                   Logout <i class="fa-solid fa-right-from-bracket"></i>
                 </h5>
