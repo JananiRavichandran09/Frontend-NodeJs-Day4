@@ -6,7 +6,7 @@ import "react-toastify/dist/ReactToastify.css";
 const ForgotPasswor = () => {
   const [email, setEmail] = useState("")
   const navigate = useNavigate()
-  
+   axios.defaults.withCredentials = true;
     const handleSubmit = async (e) => {
       e.preventDefault();
       console.log("login api payloads", email);

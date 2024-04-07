@@ -7,13 +7,14 @@ import "react-toastify/dist/ReactToastify.css";
 const ResetPassword = () => {
     const [password, setPassword] = useState()
   const navigate = useNavigate();
-   axios.defaults.withCredentials = true;
+  
     const {id,  token } = useParams()
    
   const handleSubmit = (e) => {
     toast.success("New Password Updated");
     navigate("/");
     e.preventDefault()
+     axios.defaults.withCredentials = true;
     axios
       .post(
         `https://backend-nodejs-day4.onrender.com/api/user/resetpassword/${id}/${token}`,
@@ -58,7 +59,7 @@ const ResetPassword = () => {
                         fontWeight: "bold",
                       }}
                     >
-                      Reset Password{" "}
+                      Reset Password
                     </h3>
                     <label
                       for="exampleFormControlInput1"
