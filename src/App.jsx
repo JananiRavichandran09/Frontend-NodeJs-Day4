@@ -13,9 +13,9 @@ const App = () => {
     <div>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<LoginPage setToken={setToken} />} />
+          <Route path="/login" element={<LoginPage setToken={setToken} />} />
           <Route path="/register" element={<RegisterPage />} />
-          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/" element={<Dashboard />} />
           <Route path="/forgotpassword" element={<ForgotPasswor />} />
           <Route path="/resetpassword/:id/:token" element={<ResetPassword  />} />
         </Routes>

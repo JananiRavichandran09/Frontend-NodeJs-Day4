@@ -12,7 +12,7 @@ const ResetPassword = () => {
    
   const handleSubmit = (e) => {
     toast.success("New Password Updated");
-    navigate("/");
+    navigate("/login");
     e.preventDefault()
      axios.defaults.withCredentials = true;
     axios

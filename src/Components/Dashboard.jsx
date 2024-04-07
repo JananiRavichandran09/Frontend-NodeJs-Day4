@@ -6,7 +6,7 @@ const Dashboard = () => {
   axios.defaults.withCredentials = true;
   useEffect(() => {
     axios
-      .get("https://backend-nodejs-day4.onrender.com/api/user/dashboard")
+      .get("https://backend-nodejs-day4.onrender.com/api/user/")
       .then((result) => {
         console.log(result);
         if (result.data !== "Success") {

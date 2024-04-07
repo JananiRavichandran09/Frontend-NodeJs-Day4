@@ -21,7 +21,7 @@ const RegisterPage = () => {
       .post("https://backend-nodejs-day4.onrender.com/api/user/register", payloads)
       .then((res) => setResponseMsg(res.data.message));
          toast.success("Registered Successfully")
-    navigate('/')
+    navigate('/login')
       .catch((err) => {
       console.log(err);
       toast.error(responseMsg);

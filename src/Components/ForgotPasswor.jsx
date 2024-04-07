@@ -19,7 +19,7 @@ const ForgotPasswor = () => {
         .then((res) => {
           if (res.data.Status === "Success") {
             alert("Check your Email for reset passwod link");
-            navigate("/");
+            navigate("/login");
           }
         })
         .catch((err) => {
